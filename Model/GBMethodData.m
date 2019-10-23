@@ -359,7 +359,8 @@
 		} else if (self.methodType == GBMethodTypeProperty && source.methodType == GBMethodTypeClass) {
 			return NO;
 		} else {
-			[NSException raise:@"Failed merging %@ to %@; method type doesn't match!", source, self];
+            return NO;
+			// [NSException raise:@"Failed merging %@ to %@; method type doesn't match!", source, self];
 		}
 		
 		// We should allow if the getter or setter matches and if the getter name is shared to an instance method.
